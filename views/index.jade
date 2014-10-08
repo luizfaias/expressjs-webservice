@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+  body(ng-app='basic-app', ng-controller='BasicController')
+
+    p Method:
+      input(ng-model="method", placeholder="GET")
+
+    p URL:
+      input(ng-model="url", size="100", placeholder="https://api.github.com/users/luizfaias")
+
+    button(ng-click="callws(method, url)") Call webservice
+
+    div
+      p Status: {{status}}
+      p Data: {{data}}
+
+    block scripts
+      script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js')
+      script(src='/javascripts/controller.js')
